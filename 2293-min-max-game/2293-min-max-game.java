@@ -1,15 +1,21 @@
 class Solution {
     public int minMaxGame(int[] nums) {
-        int n = nums.length;
-        if(n == 1)
-            return nums[0];
-        int[] newArr = new int[n/2];
-        for(int i=0; i<n/2; i++){
-            if(i%2 == 0)
-                newArr[i] = Math.min(nums[2*i], nums[2*i + 1]);
-            else
-                newArr[i] = Math.max(nums[2*i], nums[2*i + 1]);
+        
+        if(nums.length == 1) return nums[0];
+        return merge(nums, 0, nums.length - 1, true);
+    }
+    
+    public int merge(int[] nums, int low, int high, boolean min) {
+        
+        if(low == high) {
+            return nums[low];
         }
-        return minMaxGame(newArr);
+        
+        int mid = (low + high) / 2;
+        
+        int left = merge(nums, low, mid, true);
+        int right = merge(nums, mid + 1, high, false);
+        
+        return min == true ? Math.min(left, right) : Math.max(left, right);
     }
 }
