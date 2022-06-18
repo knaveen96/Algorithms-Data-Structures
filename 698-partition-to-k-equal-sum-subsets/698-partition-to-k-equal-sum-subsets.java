@@ -24,7 +24,6 @@ class Solution {
                     return true;
                 }
                 
-                // Backtrack step.
                 taken[j] = false;
             }
         } 
