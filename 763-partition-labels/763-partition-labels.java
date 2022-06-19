@@ -6,7 +6,6 @@ class Solution {
         List<Integer> res = new ArrayList<>();
         
         for(int i = 0 ; i < s.length() ; i++) {
-            
             char currChar = s.charAt(i);
             
             while(!stack.isEmpty() && map.containsKey(currChar) && 
@@ -29,7 +28,6 @@ class Solution {
         }
         
         for(int i = 0 ; i < arr.length ; i++) {
-            
             if(i == 0) {
                 res.add(arr[i]);
             } else {
