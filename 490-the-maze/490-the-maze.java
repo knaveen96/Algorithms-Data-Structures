@@ -10,7 +10,7 @@ class Solution {
         }
         
         if(row < 0 || row >= maze.length || col < 0 || col >= maze[0].length 
-                            || visited[row][col] || maze[row][col] == 1) {
+                            || visited[row][col]) {
             return false;
         }
         
