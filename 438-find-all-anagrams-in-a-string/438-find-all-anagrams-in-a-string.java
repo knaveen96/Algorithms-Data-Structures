@@ -63,30 +63,7 @@ class Solution {
             pMap.put(c, pMap.getOrDefault(c, 0) + 1);
             sMap.put(c, 0);
         }
-        
-        /*
-s = "cbaebabacd", p = "abc"
 
-0123456789
-cbaebabacd
-      l
-        r
-
-sMap
-a - 1
-b - 1
-c - 1
-
-count = 3
-
-pMap
-a - 1
-b - 1
-c - 1
-       
-res = [0,]
-*/
-        
         while(right < s.length()) {
             
             char rightChar = s.charAt(right); 
@@ -98,7 +75,6 @@ res = [0,]
             }
             
             if(count == p.length()) {
-                System.out.println(count);
                 res.add(left);
             }
             
@@ -111,13 +87,11 @@ res = [0,]
                         count--;
                     }
                     sMap.put(leftChar, cnt - 1);
-                    
                 }
                 left++;
             }
             right++;            
         }
-        
         return res;
     }
 }
