@@ -54,6 +54,9 @@ class Solution {
         int count = s1.length();
         int left = 0, right = 0;
         
+        if(s1.length() > s2.length() || s1 == null || s2 == null) 
+             return false;
+        
         for(char c : s1.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
