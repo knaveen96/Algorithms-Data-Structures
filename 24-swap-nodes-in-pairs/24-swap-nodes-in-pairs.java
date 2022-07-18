@@ -42,35 +42,35 @@
 
 
 
-class Solution {
-    public ListNode swapPairs(ListNode head) {
+// class Solution {
+//     public ListNode swapPairs(ListNode head) {
         
-        if(head == null) return null;
-        if(head.next == null) return head;
+//         if(head == null) return null;
+//         if(head.next == null) return head;
         
-        ListNode p = head;
-        ListNode q = head.next;
-        ListNode temp = q.next;
-        ListNode new_head = p.next;
+//         ListNode p = head;
+//         ListNode q = head.next;
+//         ListNode temp = q.next;
+//         ListNode new_head = p.next;
         
-        while(p != null) {
+//         while(p != null) {
             
-            q.next = p;
-            if(temp == null || temp.next == null) {
-                p.next = temp;
-                break;
-            }
+//             q.next = p;
+//             if(temp == null || temp.next == null) {
+//                 p.next = temp;
+//                 break;
+//             }
                 
-            p.next = temp.next;
+//             p.next = temp.next;
             
-            p = temp;
-            q = p.next;
-            temp = q.next;
-        }
+//             p = temp;
+//             q = p.next;
+//             temp = q.next;
+//         }
         
-        return new_head;
-    }
-}
+//         return new_head;
+//     }
+// }
 
 
 /*
@@ -96,5 +96,86 @@ class Solution {
 2-1-4-3
 
 */
+
+
+
+
+
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        
+        if(head == null) return null;
+        if(head.next == null) return head;
+        
+        ListNode p = head;
+        ListNode q = head.next;
+        ListNode newHead = p.next;
+        ListNode nextNode = q.next;
+        
+        while(p != null) {
+            q.next = p;
+            
+            if(nextNode == null || nextNode.next == null) {
+                p.next = nextNode;
+                return newHead;
+            }
+            p.next = nextNode.next;
+
+            q = nextNode.next;
+            p = nextNode;
+            nextNode = q.next;
+        }
+        
+        return null;
+    }
+}
+
+
+
+
+/*
+
+
+ 
+ 2->1->3
+ 
+ 1<-2  3  null
+ p
+    q 
+       N
+ 
+ 
+    1<-2  3->4
+          p  
+             q
+          n
+ 
+
+q.next = p;
+p.next = nextNode.next;
+
+q = nextNode.next;
+p = nextNode;
+nextNode = q.next;
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
