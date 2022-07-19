@@ -3,22 +3,13 @@ class Solution {
         
         int left = 0, right = 0;
         
-        for(int num : nums) {
-            right += num;
-        }
+        for(int num : nums) right += num;
         
         for(int i = 0 ; i < nums.length ; i++) {
-            
             int currNum = nums[i];
-            if(i != 0) {
-                left += nums[i - 1];
-            }
+            if(i != 0)  left += nums[i - 1];
             right -= currNum; 
-            
-            if(left == right) {
-                return i;
-            }
-            
+            if(left == right) return i;
         }
         return -1;
     }
