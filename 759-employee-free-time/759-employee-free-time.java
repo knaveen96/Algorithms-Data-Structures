@@ -83,10 +83,13 @@ class Solution {
             int start = busy.get(i).start;
             int end = busy.get(i).end;
             
-            if(start > lastEnd) {
-                free.add(new Interval(lastEnd, start));
+            if(start <= lastEnd) {
+                lastEnd = Math.max(lastEnd, end);
             }
-            lastEnd = Math.max(lastEnd, end);
+            else if(start > lastEnd) {
+                free.add(new Interval(lastEnd, start));
+                lastEnd = Math.max(lastEnd, end);
+            }
         }
         return free;
     }
