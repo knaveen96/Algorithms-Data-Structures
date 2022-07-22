@@ -10,6 +10,7 @@ class Solution {
         queue.add(new int[]{0,0});
         int[][] dir = {{-1,-1},{-1,0},{-1,1},{0,-1},{0,1},{1,-1},                                                           {1,0},{1,1}};
         int len = 0; //1
+        grid[0][0] = -1;
         
         while(!queue.isEmpty()) {
             int size = queue.size(); //1
@@ -18,7 +19,7 @@ class Solution {
                 int i = queue.peek()[0];//0
                 int j = queue.peek()[1];//0
                 queue.poll();
-                grid[i][j] = -1;
+                //grid[i][j] = -1;
                 
                 for(int[] d : dir) {
                     int r = i + d[0];//0
