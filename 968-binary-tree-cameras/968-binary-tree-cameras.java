@@ -17,8 +17,6 @@ class Solution {
     int cameras = 0;
     public int minCameraCover(TreeNode root) {
         
-        if(root == null) return 0;
-        if(root.left == null && root.right == null) return 1;
         if(dfs(root) == 0) cameras += 1;
         return cameras;
     }
