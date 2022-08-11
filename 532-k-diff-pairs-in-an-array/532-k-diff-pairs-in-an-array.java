@@ -38,7 +38,7 @@ class Solution {
             int iVal = nums[i];
             int jVal = iVal - k;
             
-            if(jVal == iVal) {
+            if(k == 0) {
                 if(map.get(jVal) > 1) {
                     count++;
                     map.put(jVal,0);
