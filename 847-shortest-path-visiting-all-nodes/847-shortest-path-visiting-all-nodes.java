@@ -30,8 +30,10 @@ class Solution {
             
             for(int nei : graph[node.node]) {
                 int mask = node.visited | (1 << nei);
-                if(visited[nei].add(mask)) 
+                if(!visited[nei].contains(mask)) {
                     queue.add(new Node(nei, 1 + node.dist, mask));
+                    visited[nei].add(mask);
+                }
             }
         }
         return -1;
