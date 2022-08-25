@@ -32,13 +32,12 @@ class Solution {
             res = root;
             return 1;
         }
-        else if(left == 1 || right == 1) {
+        else if((left == 1 || right == 1) || (root.val == p.val || root.val == q.val)) {
             return 1;
         }
-        else if(root.val == p.val || root.val == q.val) {
-            //System.out.println(root.val + " " + p.val + " " + q.val);
-            return 1;
-        } 
+        // else if(root.val == p.val || root.val == q.val) {
+        //     return 1;
+        // } 
         return 0;
     }
 }
