@@ -16,7 +16,7 @@ class Solution {
                 right++;
             }
             
-            if(left < nums.length && right < nums.length) {
+            if(right < nums.length) {
                 int temp = nums[left];
                 nums[left] = nums[right];
                 nums[right] = temp;
