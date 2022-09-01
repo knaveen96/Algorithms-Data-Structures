@@ -85,14 +85,10 @@ class Solution {
         
         if(t.length() < s.length()) return false;
         
-        while(sp < s.length()) {
+        while(sp < s.length() && tp < t.length()) {
             
-            if(tp >= t.length()) {
-                return false;
-            }
             char tChar = t.charAt(tp);
             char sChar = s.charAt(sp);
-            
             
             if(tChar == sChar) {
                 tp++;
@@ -103,7 +99,7 @@ class Solution {
             }
             
         }
-        return true;
+        return sp == s.length();
         
     }
 }
