@@ -9,7 +9,6 @@ class Solution {
             right += num;
             left = Math.max(left, num);
         }
-        //right -= left;
         
         while(left <= right) {
             int mid = left + (right - left) / 2;
