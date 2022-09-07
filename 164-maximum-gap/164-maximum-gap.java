@@ -24,7 +24,6 @@ class Solution {
             if(nums[i] == min || nums[i] == max) continue;
             int indexOfNum = (nums[i] - min) / bucketSize;
             
-            System.out.println(minVal[indexOfNum] + " " + nums[i]);
             minVal[indexOfNum] = Math.min(minVal[indexOfNum], nums[i]);
             maxVal[indexOfNum] = Math.max(maxVal[indexOfNum], nums[i]);
         }
