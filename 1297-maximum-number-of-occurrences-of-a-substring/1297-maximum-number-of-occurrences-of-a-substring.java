@@ -33,9 +33,6 @@ class Solution {
             }
             right++;
         }
-        for(String key : res.keySet()) {
-            System.out.println(key + " " + res.get(key));
-        }
         return max;
     }
 }
