@@ -22,8 +22,8 @@ class Solution {
                && right - left + 1 <= maxSize) {
                 String str = s.substring(left, right + 1);
                 res.put(str, res.getOrDefault(str ,0) + 1);
-                System.out.println(str);
                 max = Math.max(max, res.get(str));
+                
                 char leftChar = s.charAt(left);
                 map.put(leftChar, map.get(leftChar) - 1);
                 if(map.get(leftChar) == 0) {
