@@ -64,7 +64,6 @@ class Solution {
         
         if(node == null || isLeaf(node)) return;
         
-        System.out.println(node.val);
         res.add(node.val);
         if(node.right != null) {
             rightBoundary(node.right);
