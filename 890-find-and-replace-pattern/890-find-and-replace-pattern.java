@@ -8,8 +8,7 @@ class Solution {
                 res.add(curr);
             }
         }
-                    return res;
-
+        return res;
     }
     
     public boolean same(String curr, String pattern) {
