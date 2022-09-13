@@ -1,19 +1,17 @@
 class OrderedStream {
     int ptr;
-    Map<Integer, String> map;
+    String[] arr;
     public OrderedStream(int n) {
         ptr = 1;
-        map = new HashMap<>();
+        arr = new String[n + 1];
     }
     
     public List<String> insert(int idKey, String value) {
-        map.put(idKey, value);
+        arr[idKey] = value;
         List<String> list = new ArrayList<>();
         
-        while(map.containsKey(ptr)) {
-            list.add(map.get(ptr));
-            map.remove(ptr);
-            ptr++;
+        while(ptr < arr.length && arr[ptr] != null) {
+            list.add(arr[ptr++]);
         }
         return list;
     }
