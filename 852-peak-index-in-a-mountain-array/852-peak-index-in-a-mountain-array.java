@@ -8,7 +8,7 @@ class Solution {
                 return mid;
             }
             else if(arr[mid - 1] < arr[mid] && arr[mid] < arr[mid + 1]) {
-                left = mid;
+                left = mid + 1;
             }
             else {
                 right = mid;
